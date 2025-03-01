@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Github, Linkedin, MessageCircle, Menu, X, ExternalLink, Mail, ChevronRight } from 'lucide-react';
+import { Github, Linkedin, MessageCircle, Menu, X, ExternalLink, Mail, ChevronRight, Instagram, Twitter, Facebook } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -300,14 +300,11 @@ function App() {
             </form>
 
             <div className="mt-12 flex justify-center space-x-6">
-              <a
-                href="https://ao.linkedin.com/in/mariano-javaswing-a44763180"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Linkedin size={24} />
+              <a href="https://www.facebook.com/JavaSwing/" target='_blank' className="text-gray-300 hover:text-white">
+                <Facebook className="h-5 w-5" />
               </a>
+
+              {/* GITHUB */}
               <a
                 href="https://github.com/marianoj8"
                 target="_blank"
@@ -316,6 +313,13 @@ function App() {
               >
                 <Github size={24} />
               </a>
+
+              {/* X */}
+              <a href="https://x.com/MJavaswing" target='_blank' className="text-gray-300 hover:text-white">
+                <Twitter className="h-5 w-5" />
+              </a>
+
+              {/* TELEGRAM */}
               <a
                 href="https://t.me/marianoj8"
                 target="_blank"
@@ -324,11 +328,20 @@ function App() {
               >
                 <MessageCircle size={24} />
               </a>
+
+              {/* INSTAGRAM */}
+              <a href="https://www.instagram.com/marianojavaswing/" target='_blank' className="text-gray-300 hover:text-white">
+                <Instagram className="h-5 w-5" />
+              </a>
+
+              {/* LINKED-IN */}
               <a
-                href="mailto:marianojs8@yandex.ru"
+                href="https://ao.linkedin.com/in/mariano-javaswing-a44763180"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <Mail size={24} />
+                <Linkedin size={24} />
               </a>
             </div>
           </div>
@@ -338,7 +351,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-[#1A1A2E] text-gray-400 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>© 2024 Mariano JavaSwing. Todos os direitos reservados.</p>
+          <p>© 2024 Mariano J8. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
