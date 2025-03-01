@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Github, Linkedin, MessageCircle, Menu, X, ExternalLink, Mail, ChevronRight } from 'lucide-react';
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
         <nav className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <a href="#" className="text-2xl font-bold">Mariano JavaSwing</a>
-            
+
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="md:hidden"
               onClick={toggleMenu}
             >
@@ -52,12 +52,12 @@ function App() {
             Desenvolvedor Sênior
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-4">
-            14+ anos de experiência
+            11+ anos de experiência
           </p>
           <p className="text-lg md:text-xl text-gray-400 mb-8">
             Especialista em Java e Microserviços
           </p>
-          <a 
+          <a
             href="#contact"
             className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg
                      hover:bg-blue-700 transition-colors duration-200"
@@ -82,10 +82,10 @@ function App() {
             <div className="w-full md:w-2/3">
               <h2 className="text-3xl font-bold mb-6">Sobre Mim</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Desenvolvedor sênior com mais de 14 anos de experiência em tecnologias como 
-                Java, Spring, Kafka, MySQL, PostgreSQL e Flutter. Especialista em arquitetura 
-                de microserviços e desenvolvimento de sistemas escaláveis. Apaixonado por criar 
-                soluções inovadoras, já trabalhei em projetos desafiadores, desde sistemas de 
+                Desenvolvedor sênior com mais de 11 anos de experiência em tecnologias como
+                Java, Spring, Kafka, MySQL, PostgreSQL e Flutter. Especialista em arquitetura
+                de microserviços e desenvolvimento de sistemas escaláveis. Apaixonado por criar
+                soluções inovadoras, já trabalhei em projetos desafiadores, desde sistemas de
                 alta performance até aplicativos móveis modernos.
               </p>
             </div>
@@ -99,11 +99,11 @@ function App() {
           <h2 className="text-3xl font-bold mb-12 text-center">Habilidades Técnicas</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              'Java', 'Spring Boot', 'JavaSwing', 'Dart',
+              'Java', 'Spring Boot', 'Dart',
               'MySQL', 'PostgreSQL', 'Kafka', 'Flutter',
               'Docker', 'Kubernetes', 'Microserviços', 'APIs RESTful'
             ].map((skill) => (
-              <div 
+              <div
                 key={skill}
                 className="bg-gray-50 rounded-xl p-6 text-center shadow-md
                          hover:shadow-lg transition-shadow duration-200"
@@ -128,8 +128,8 @@ function App() {
                   Sistema de Venda e Compra de Bilhetes de Transportes
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Aplicativo móvel desenvolvido em Flutter para facilitar a compra e 
-                  venda de bilhetes de transporte público. Integração com APIs de 
+                  Aplicativo móvel desenvolvido em Flutter para facilitar a compra e
+                  venda de bilhetes de transporte público. Integração com APIs de
                   pagamento e notificações em tempo real.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -158,8 +158,8 @@ function App() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Carteira Monetária Digital</h3>
                 <p className="text-gray-600 mb-4">
-                  Sistema de carteira digital para transações seguras e rápidas, 
-                  com integração a bancos e criptomoedas. Desenvolvido com arquitetura 
+                  Sistema de carteira digital para transações seguras e rápidas,
+                  com integração a bancos e criptomoedas. Desenvolvido com arquitetura
                   de microserviços usando Spring Boot.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -190,7 +190,7 @@ function App() {
                   Plataforma de Gerenciamento de Microserviços
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Sistema para gerenciamento e monitoramento de microserviços, 
+                  Sistema para gerenciamento e monitoramento de microserviços,
                   com integração a Docker e Kubernetes.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -212,6 +212,38 @@ function App() {
                 </a>
               </div>
             </div>
+
+            {/* Project 4 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="h-48 bg-gradient-to-r from-green-500 to-green-700"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">
+                  Plataforma de Consumo e Gerenciamento de Energia Doméstico
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Sistema para gerenciamento e monitoramento de consume de Energia Eletrica. (Async Energy)
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+                    Dart
+                  </span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+                    Flutter
+                  </span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+                    Firebase
+                  </span>
+                </div>
+                <a
+                  href="https://async-energy.web.app/"
+                  target='_blank'
+                  className="inline-flex items-center text-purple-600 hover:text-purple-700"
+                >
+                  Ver Detalhes <ExternalLink size={16} className="ml-1" />
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -269,7 +301,7 @@ function App() {
 
             <div className="mt-12 flex justify-center space-x-6">
               <a
-                href="https://linkedin.com"
+                href="https://ao.linkedin.com/in/mariano-javaswing-a44763180"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -277,7 +309,7 @@ function App() {
                 <Linkedin size={24} />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/marianoj8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -285,7 +317,7 @@ function App() {
                 <Github size={24} />
               </a>
               <a
-                href="https://t.me/username"
+                href="https://t.me/marianoj8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -293,7 +325,7 @@ function App() {
                 <MessageCircle size={24} />
               </a>
               <a
-                href="mailto:email@example.com"
+                href="mailto:marianojs8@yandex.ru"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Mail size={24} />
