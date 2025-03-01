@@ -86,7 +86,7 @@ function App() {
                 Java, Spring, Kafka, MySQL, PostgreSQL e Flutter. Especialista em arquitetura
                 de microserviços e desenvolvimento de sistemas escaláveis. Apaixonado por criar
                 soluções inovadoras, já trabalhei em projetos desafiadores, desde sistemas de
-                alta performance até aplicativos móveis modernos.
+                alta performance até aplicativos móveis modernos e integração de sistemas de pagamentos online.
               </p>
             </div>
           </div>
