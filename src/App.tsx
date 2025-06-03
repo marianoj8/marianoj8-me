@@ -282,7 +282,7 @@ function App() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Entre em Contato</h2>
           <div className="max-w-2xl mx-auto">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={(e) => sendEmail(e)}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Nome
@@ -293,6 +293,8 @@ function App() {
                   className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700
                            focus:outline-none focus:border-blue-500 text-white"
                   placeholder="Seu nome"
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                 />
               </div>
               <div>
@@ -305,6 +307,8 @@ function App() {
                   className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700
                            focus:outline-none focus:border-blue-500 text-white"
                   placeholder="seu@email.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                 />
               </div>
               <div>
@@ -317,6 +321,8 @@ function App() {
                   className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700
                            focus:outline-none focus:border-blue-500 text-white"
                   placeholder="Sua mensagem"
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
                 ></textarea>
               </div>
               <button
