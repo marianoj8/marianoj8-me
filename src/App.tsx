@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Github, Linkedin, MessageCircle, Menu, X, ExternalLink, Mail, ChevronRight, Instagram, Twitter, Facebook } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
