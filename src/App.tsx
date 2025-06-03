@@ -144,7 +144,7 @@ function App() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href="https://wasp-bm24.web.app/login"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700"
                 >
                   Ver Detalhes <ExternalLink size={16} className="ml-1" />
