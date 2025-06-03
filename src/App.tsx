@@ -5,6 +5,35 @@ import emailjs from '@emailjs/browser';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  function sendEmail(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (name === '' || email === '' || message === '') {
+      alert('Preencha todos os campos...');
+      return;
+    }
+
+    const templateParams = {
+      name: name,
+      message: message,
+      email: email,
+    }
+
+    emailjs.send('service_et13jdk', 'template_yj32pl3', templateParams, 'uSdQGv_eS-ztvEdX7')
+      .then((response) => {
+        setName('');
+        setEmail('');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.log("ERROR:", error);
+      });
+  }
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
