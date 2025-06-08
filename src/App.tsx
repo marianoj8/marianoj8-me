@@ -10,7 +10,7 @@ function App() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   function sendEmail(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
