@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Github, Linkedin, MessageCircle, Menu, X, ExternalLink, Mail, ChevronRight, Instagram, Twitter, Facebook } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,6 +9,8 @@ function App() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const { t } = useTranslation();
 
   function sendEmail(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -56,20 +59,20 @@ function App() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="hover:text-blue-400 transition-colors">Sobre Mim</a>
-              <a href="#skills" className="hover:text-blue-400 transition-colors">Habilidades</a>
-              <a href="#projects" className="hover:text-blue-400 transition-colors">Projetos</a>
-              <a href="#contact" className="hover:text-blue-400 transition-colors">Contato</a>
+              <a href="#about" className="hover:text-blue-400 transition-colors">{t('aboutMe')}</a>
+              <a href="#skills" className="hover:text-blue-400 transition-colors">{t('technicalSkills01')}</a>
+              <a href="#projects" className="hover:text-blue-400 transition-colors">{t('projects')}</a>
+              <a href="#contact" className="hover:text-blue-400 transition-colors">{t('contact')}</a>
             </div>
           </div>
 
           {/* Mobile Navigation */}
           <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} pt-4`}>
             <div className="flex flex-col space-y-4">
-              <a href="#about" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>Sobre Mim</a>
-              <a href="#skills" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>Habilidades</a>
-              <a href="#projects" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>Projetos</a>
-              <a href="#contact" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>Contato</a>
+              <a href="#about" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('aboutMe')}</a>
+              <a href="#skills" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('technicalSkills01')}</a>
+              <a href="#projects" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('projects')}</a>
+              <a href="#contact" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('contact')}</a>
             </div>
           </div>
         </nav>
@@ -110,13 +113,8 @@ function App() {
               />
             </div>
             <div className="w-full md:w-2/3">
-              <h2 className="text-3xl font-bold mb-6">Sobre Mim</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Desenvolvedor sênior com mais de 11 anos de experiência em tecnologias como
-                Java, Spring, Kafka, MySQL, PostgreSQL e Flutter. Especialista em arquitetura
-                de microserviços e desenvolvimento de sistemas escaláveis. Apaixonado por criar
-                soluções inovadoras, já trabalhei em projetos desafiadores, desde sistemas de
-                alta performance até aplicativos móveis modernos e integração de sistemas de pagamentos online.
+              <h2 className="text-3xl font-bold mb-6">{t('aboutMe')}</h2>
+              <p className="text-lg text-gray-700 leading-relaxed">{t('aboutMeContent')}
               </p>
             </div>
           </div>
@@ -126,12 +124,12 @@ function App() {
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Habilidades Técnicas</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">{t('technicalSkills01')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               'Java', 'Spring Boot', 'Dart',
               'MySQL', 'PostgreSQL', 'Kafka', 'Flutter',
-              'Docker', 'Kubernetes', 'Microserviços', 'APIs RESTful'
+              'Docker', 'Kubernetes', t('microservices'), 'APIs RESTful'
             ].map((skill) => (
               <div
                 key={skill}
@@ -148,7 +146,7 @@ function App() {
       {/* Projects Section */}
       <section id="projects" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Projetos Destacados</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">{t('highlightKeyProjects')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project 1 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
