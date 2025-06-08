@@ -140,7 +140,7 @@ function App() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               'Java', 'Spring Boot', 'Dart', 'Typescript',
-              'MySQL', 'PostgreSQL', 'Kafka', 'Flutter',
+              'MySQL', 'PostgreSQL', 'Firebase', 'Kafka', 'Flutter', 'Firebase',
               'Docker', 'Kubernetes', t('microservices'), 'APIs RESTful'
             ].map((skill) => (
               <div
