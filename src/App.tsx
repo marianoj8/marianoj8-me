@@ -94,7 +94,7 @@ function App() {
       <section className="pt-32 pb-20 bg-[#1A1A2E] text-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Desenvolvedor Sênior
+            {t('seniorJavaDeveloper')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-4">
             11+ anos de experiência
