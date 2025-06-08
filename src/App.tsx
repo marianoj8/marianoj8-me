@@ -67,6 +67,10 @@ function App() {
               <a href="#skills" className="hover:text-blue-400 transition-colors">{t('technicalSkills01')}</a>
               <a href="#projects" className="hover:text-blue-400 transition-colors">{t('projects')}</a>
               <a href="#contact" className="hover:text-blue-400 transition-colors">{t('contact')}</a>
+              <select onChange={(e) => changeLanguage(e.target.value)} className="style">
+                <option selected value="en">English</option>
+                <option value="pt">Português</option>
+              </select>
             </div>
           </div>
 
