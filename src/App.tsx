@@ -203,10 +203,7 @@ function App() {
                     Flutter
                   </span>
                   <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                    Spring Boot
-                  </span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                    MySQL
+                    Firebase
                   </span>
                 </div>
                 <a
