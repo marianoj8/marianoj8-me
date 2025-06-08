@@ -139,7 +139,7 @@ function App() {
           <h2 className="text-3xl font-bold mb-12 text-center">{t('technicalSkills01')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              'Java', 'Spring Boot', 'Dart',
+              'Java', 'Spring Boot', 'Dart', 'Typescript',
               'MySQL', 'PostgreSQL', 'Kafka', 'Flutter',
               'Docker', 'Kubernetes', t('microservices'), 'APIs RESTful'
             ].map((skill) => (
