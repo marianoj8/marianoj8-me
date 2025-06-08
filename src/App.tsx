@@ -302,7 +302,7 @@ function App() {
                   id="name"
                   className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700
                            focus:outline-none focus:border-blue-500 text-white"
-                  placeholder="Seu nome"
+                  placeholder={t('yourName')}
                   onChange={(e) => setName(e.target.value)}
                   value={name}
                 />
