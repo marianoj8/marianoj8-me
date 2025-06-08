@@ -8,4 +8,13 @@
   html {
     font-family: 'Poppins', sans-serif;
   }
+
+  .style {
+    background-color: #1A1A2E;
+    color: whitesmoke;
+    border: whitesmoke solid 1px;
+    border-radius: 0.5rem;
+    padding-left: 0.2rem;
+    padding-right: 0.1rem;
+  }
 }
