@@ -200,7 +200,7 @@ function App() {
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                    Java
+                    Flutter
                   </span>
                   <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
                     Spring Boot
