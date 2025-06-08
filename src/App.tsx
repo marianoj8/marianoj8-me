@@ -100,7 +100,7 @@ function App() {
             {t('yearsOfExp')}
           </p>
           <p className="text-lg md:text-xl text-gray-400 mb-8">
-            Especialista em Java e Microserviços
+            {t('expertIn')}
           </p>
           <a
             href="#contact"
