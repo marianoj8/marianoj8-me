@@ -295,7 +295,7 @@ function App() {
             <form className="space-y-6" onSubmit={(e) => sendEmail(e)}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Nome
+                  {t('name')}
                 </label>
                 <input
                   type="text"
