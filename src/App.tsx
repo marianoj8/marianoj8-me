@@ -41,6 +41,10 @@ function App() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header/Navigation */}
