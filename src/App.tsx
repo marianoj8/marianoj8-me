@@ -258,7 +258,10 @@ function App() {
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
-                    Dart
+                    HTML5
+                  </span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+                    CSS3
                   </span>
                   <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
                     Flutter
