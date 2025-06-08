@@ -97,7 +97,7 @@ function App() {
             {t('seniorJavaDeveloper')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-4">
-            11+ anos de experiência
+            {t('yearsOfExp')}
           </p>
           <p className="text-lg md:text-xl text-gray-400 mb-8">
             Especialista em Java e Microserviços
