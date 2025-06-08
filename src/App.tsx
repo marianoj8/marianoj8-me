@@ -290,7 +290,7 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-[#1A1A2E] text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Entre em Contato</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center"> {t('contactMe')}</h2>
           <div className="max-w-2xl mx-auto">
             <form className="space-y-6" onSubmit={(e) => sendEmail(e)}>
               <div>
