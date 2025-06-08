@@ -264,7 +264,7 @@ function App() {
                     CSS3
                   </span>
                   <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
-                    Flutter
+                    TS/JS
                   </span>
                   <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
                     Firebase
