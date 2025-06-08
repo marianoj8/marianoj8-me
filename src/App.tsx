@@ -323,7 +323,7 @@ function App() {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Mensagem
+                  {t('message')}
                 </label>
                 <textarea
                   id="message"
