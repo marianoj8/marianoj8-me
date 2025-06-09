@@ -54,6 +54,11 @@ function App() {
             <a href="#" className="text-2xl font-bold">Mariano JavaSwing</a>
 
             {/* Mobile Menu Button */}
+            <select onChange={(e) => changeLanguage(e.target.value)} className="style md:hidden">
+              <option selected value="en">English</option>
+              <option value="pt">Português</option>
+            </select>
+
             <button
               className="md:hidden"
               onClick={toggleMenu}
@@ -81,10 +86,10 @@ function App() {
               <a href="#skills" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('technicalSkills01')}</a>
               <a href="#projects" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('projects')}</a>
               <a href="#contact" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('contact')}</a>
-              <select onChange={(e) => changeLanguage(e.target.value)} className="style">
+              {/* <select onChange={(e) => changeLanguage(e.target.value)} className="style">
                 <option selected value="en">English</option>
                 <option value="pt">Português</option>
-              </select>
+              </select> */}
             </div>
           </div>
         </nav>
