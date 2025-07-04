@@ -16,5 +16,7 @@
     "yourName": "Your name",
     "yourEmail": "seu@email.com",
     "yourMessage": "Sua messagem",
-    "aboutMeContent": "Desenvolvedor sênior com mais de 11 anos de experiência em tecnologias como Java, Spring, Typescript, Kafka, MySQL, PostgreSQL e Dart. Especialista em arquitetura de microserviços e desenvolvimento de sistemas escaláveis. Apaixonado por criar soluções inovadoras, já trabalhei em projetos desafiadores, desde sistemas de alta performance até aplicativos móveis modernos e integração de sistemas de pagamentos online."
+    "aboutMeContent": "Desenvolvedor sênior com mais de 11 anos de experiência em tecnologias como Java, Spring, Typescript, Kafka, MySQL, PostgreSQL e Dart. Especialista em arquitetura de microserviços e desenvolvimento de sistemas escaláveis. Apaixonado por criar soluções inovadoras, já trabalhei em projetos desafiadores, desde sistemas de alta performance até aplicativos móveis modernos e integração de sistemas de pagamentos online.",
+    "PublicTransportTicketSalesAndPurchaseSystem": "Sistema de Venda e Compra de Bilhetes de Transportes",
+    "PublicTransportTicketSalesAndPurchaseSystemDescription": " Aplicativo móvel desenvolvido em Flutter para facilitar a compra e venda de bilhetes de transporte público. Integração com APIs de pagamento e notificações em tempo real."
 }

@@ -170,12 +170,10 @@ function App() {
               <div className="h-48 bg-gradient-to-r from-blue-500 to-blue-700"></div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">
-                  Sistema de Venda e Compra de Bilhetes de Transportes
+                  {t('PublicTransportTicketSalesAndPurchaseSystem')}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Aplicativo móvel desenvolvido em Flutter para facilitar a compra e
-                  venda de bilhetes de transporte público. Integração com APIs de
-                  pagamento e notificações em tempo real.
+                  {t('PublicTransportTicketSalesAndPurchaseSystemDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">

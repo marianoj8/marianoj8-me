@@ -16,5 +16,7 @@
     "yourName": "Your name",
     "yourEmail": "Your@email.com",
     "yourMessage": "Your message",
-    "aboutMeContent": "Senior Developer with over 11 years of experience in technologies such as Java, Spring, Typescript, Kafka, MySQL, PostgreSQL, and Dart. Expert in microservices architecture and scalable system development. Passionate about creating innovative solutions, I have worked on challenging projects, ranging from high-performance systems to modern mobile applications and online payment system integrations."
+    "aboutMeContent": "Senior Developer with over 11 years of experience in technologies such as Java, Spring, Typescript, Kafka, MySQL, PostgreSQL, and Dart. Expert in microservices architecture and scalable system development. Passionate about creating innovative solutions, I have worked on challenging projects, ranging from high-performance systems to modern mobile applications and online payment system integrations.",
+    "PublicTransportTicketSalesAndPurchaseSystem": "Public Transport Ticket Sales and Purchase System",
+    "PublicTransportTicketSalesAndPurchaseSystemDescription": "Mobile application developed in Flutter to facilitate the buying and selling of public transport tickets. Integrated with payment APIs and real-time notifications."
 }
