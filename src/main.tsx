@@ -9,3 +9,8 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>
 );
+
+//TODO: steps to deploy the app
+//npm run build
+//cd dist
+//firebase deploy
