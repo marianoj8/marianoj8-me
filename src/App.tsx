@@ -100,18 +100,27 @@ function App() {
             </a>
 
             {/* Mobile Menu Button */}
-            <select onChange={(e) => changeLanguage(e.target.value)} className="style md:hidden">
-              <option selected value="en">English</option>
-              <option value="pt">Português</option>
-              <option value="ru">Русский</option>
-            </select>
+            <div className="md:hidden flex items-center gap-3">
+              <select onChange={(e) => changeLanguage(e.target.value)} className="style text-sm bg-transparent border border-white/20 rounded-lg px-2 py-1">
+                <option value="en">EN</option>
+                <option value="pt">PT</option>
+                <option value="ru">RU</option>
+              </select>
 
-            <button
-              className="md:hidden"
-              onClick={toggleMenu}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-lg hover:bg-blue-500/20 transition-all duration-300"
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+
+              <button
+                onClick={toggleMenu}
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-1">
@@ -149,12 +158,6 @@ function App() {
               <a href="#skills" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('technicalSkills01')}</a>
               <a href="#projects" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('projects')}</a>
               <a href="#contact" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('contact')}</a>
-              <button
-                onClick={toggleDarkMode}
-                className="flex items-center gap-2 hover:text-blue-400 transition-colors"
-              >
-                {darkMode ? <><Sun size={20} /> Light Mode</> : <><Moon size={20} /> Dark Mode</>}
-              </button>
             </div>
           </div>
         </nav>

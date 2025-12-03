@@ -37,5 +37,7 @@
     "allRightsReserved": "All rights reserved.",
     "fillAllFields": "Please fill in all fields...",
     "sgdeaTitle": "SGDEA - Single Declaration Management System",
-    "sgdeaDescription": "Modern and intuitive system for complete management of customs Single Declarations, developed to optimize processes and ensure compliance with current regulations."
+    "sgdeaDescription": "Modern and intuitive system for complete management of customs Single Declarations, developed to optimize processes and ensure compliance with current regulations.",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
 }
