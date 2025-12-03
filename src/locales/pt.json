@@ -35,5 +35,7 @@
     "letsDiscuss": "Vamos conversar sobre seu próximo projeto",
     "developedWith": "Desenvolvido com React + Vite",
     "allRightsReserved": "Todos os direitos reservados.",
-    "fillAllFields": "Preencha todos os campos..."
+    "fillAllFields": "Preencha todos os campos...",
+    "sgdeaTitle": "SGDEA - Sistema de Gerenciamento de Declaração Única",
+    "sgdeaDescription": "Sistema moderno e intuitivo para gestão completa de Declarações Únicas aduaneiras, desenvolvido para otimizar processos e garantir conformidade com as regulamentações vigentes."
 }

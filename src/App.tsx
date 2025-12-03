@@ -416,6 +416,43 @@ function App() {
               </div>
             </div>
 
+            {/* Project 5 - SGDEA */}
+            <div className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-violet-300 hover:-translate-y-2">
+              <div className="h-56 bg-gradient-to-br from-violet-500 via-purple-600 to-fuchsia-600 relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Code2 className="w-16 h-16 text-white/80 group-hover:scale-110 transition-transform duration-500" />
+                </div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-violet-600 transition-colors">
+                  {t('sgdeaTitle')}
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  {t('sgdeaDescription')}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-4 py-1.5 bg-violet-50 text-violet-700 rounded-full text-sm font-medium border border-violet-200">
+                    Flutter
+                  </span>
+                  <span className="px-4 py-1.5 bg-violet-50 text-violet-700 rounded-full text-sm font-medium border border-violet-200">
+                    Firebase
+                  </span>
+                  <span className="px-4 py-1.5 bg-violet-50 text-violet-700 rounded-full text-sm font-medium border border-violet-200">
+                    Dart
+                  </span>
+                </div>
+                <a
+                  href="https://wasp-du.web.app/about"
+                  target='_blank'
+                  className="inline-flex items-center gap-2 text-violet-600 hover:text-violet-700 font-semibold group/link"
+                >
+                  {t('viewDetails')}
+                  <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
