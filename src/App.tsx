@@ -38,7 +38,7 @@ function App() {
     e.preventDefault();
 
     if (name === '' || email === '' || message === '') {
-      alert('Preencha todos os campos...');
+      alert(t('fillAllFields'));
       return;
     }
 
@@ -209,7 +209,7 @@ function App() {
                 {t('aboutMe')}
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
-                Criando soluções que transformam negócios
+                {t('creatingSolutionsTitle')}
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
                 {t('aboutMeContent')}
@@ -217,11 +217,11 @@ function App() {
               <div className="flex flex-wrap gap-4 mt-8">
                 <div className="flex items-center gap-2 text-slate-700">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="font-medium">11+ anos de experiência</span>
+                  <span className="font-medium">{t('yearsExperience')}</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                  <span className="font-medium">100+ projetos entregues</span>
+                  <span className="font-medium">{t('projectsDelivered')}</span>
                 </div>
               </div>
             </div>
@@ -238,7 +238,7 @@ function App() {
               {t('technicalSkills02')}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
-              Tecnologias e Ferramentas
+              {t('technologiesAndTools')}
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 max-w-6xl mx-auto">
@@ -265,13 +265,13 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
-              Portfolio
+              {t('portfolio')}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
               {t('highlightKeyProjects')}
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              Projetos que demonstram expertise técnica e inovação
+              {t('projectsDescription')}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -303,7 +303,7 @@ function App() {
                   target='_blank'
                   className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold group/link"
                 >
-                  Ver Detalhes
+                  {t('viewDetails')}
                   <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                 </a>
               </div>
@@ -318,11 +318,9 @@ function App() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-emerald-600 transition-colors">Carteira Monetária Digital</h3>
+                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-emerald-600 transition-colors">{t('digitalWallet')}</h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  Sistema de carteira digital para transações seguras e rápidas,
-                  com integração a bancos e criptomoedas. Desenvolvido com arquitetura
-                  de microserviços usando Spring Boot.
+                  {t('digitalWalletDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium border border-emerald-200">
@@ -336,7 +334,7 @@ function App() {
                   href="#"
                   className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold group/link"
                 >
-                  Ver Detalhes
+                  {t('viewDetails')}
                   <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                 </a>
               </div>
@@ -352,11 +350,10 @@ function App() {
               </div>
               <div className="p-8">
                 <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-orange-600 transition-colors">
-                  Plataforma de Gerenciamento de Microserviços
+                  {t('microservicesPlatform')}
                 </h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  Sistema para gerenciamento e monitoramento de microserviços,
-                  com integração a Docker e Kubernetes.
+                  {t('microservicesPlatformDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-4 py-1.5 bg-orange-50 text-orange-700 rounded-full text-sm font-medium border border-orange-200">
@@ -373,7 +370,7 @@ function App() {
                   href="#"
                   className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold group/link"
                 >
-                  Ver Detalhes
+                  {t('viewDetails')}
                   <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                 </a>
               </div>
@@ -389,10 +386,10 @@ function App() {
               </div>
               <div className="p-8">
                 <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-teal-600 transition-colors">
-                  Plataforma de Consumo e Gerenciamento de Energia Doméstico
+                  {t('energyPlatform')}
                 </h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  Sistema para gerenciamento e monitoramento de consume de Energia Eletrica. (Async Energy)
+                  {t('energyPlatformDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-4 py-1.5 bg-teal-50 text-teal-700 rounded-full text-sm font-medium border border-teal-200">
@@ -413,7 +410,7 @@ function App() {
                   target='_blank'
                   className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-semibold group/link"
                 >
-                  Ver Detalhes
+                  {t('viewDetails')}
                   <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                 </a>
               </div>
@@ -438,7 +435,7 @@ function App() {
               {t('contactMe')}
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Vamos conversar sobre seu próximo projeto
+              {t('letsDiscuss')}
             </p>
           </div>
           <div className="max-w-2xl mx-auto">
@@ -554,9 +551,9 @@ function App() {
               <Code2 className="w-6 h-6 text-blue-400" />
               <span className="text-lg font-bold text-white">Mariano JavaSwing</span>
             </div>
-            <p className="text-center">© 2024 Mariano J8. Todos os direitos reservados.</p>
+            <p className="text-center">© 2024 Mariano J8. {t('allRightsReserved')}</p>
             <div className="text-sm text-slate-500">
-              Desenvolvido com React + Vite
+              {t('developedWith')}
             </div>
           </div>
         </div>
