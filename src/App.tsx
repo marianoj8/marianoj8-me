@@ -433,13 +433,16 @@ function App() {
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-4 py-1.5 bg-violet-50 text-violet-700 rounded-full text-sm font-medium border border-violet-200">
-                    Flutter
+                    React
                   </span>
                   <span className="px-4 py-1.5 bg-violet-50 text-violet-700 rounded-full text-sm font-medium border border-violet-200">
-                    Firebase
+                    TypeScript
                   </span>
                   <span className="px-4 py-1.5 bg-violet-50 text-violet-700 rounded-full text-sm font-medium border border-violet-200">
-                    Dart
+                    PostgreSQL
+                  </span>
+                  <span className="px-4 py-1.5 bg-violet-50 text-violet-700 rounded-full text-sm font-medium border border-violet-200">
+                    Vite
                   </span>
                 </div>
                 <a
