@@ -86,6 +86,7 @@ function App() {
             <select onChange={(e) => changeLanguage(e.target.value)} className="style md:hidden">
               <option selected value="en">English</option>
               <option value="pt">Português</option>
+              <option value="ru">Русский</option>
             </select>
 
             <button
@@ -112,6 +113,7 @@ function App() {
               <select onChange={(e) => changeLanguage(e.target.value)} className="style">
                 <option selected value="en">English</option>
                 <option value="pt">Português</option>
+                <option value="ru">Русский</option>
               </select>
             </div>
           </div>
