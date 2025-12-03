@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, MessageCircle, Menu, X, ExternalLink, Mail, ChevronRight, Instagram, Twitter, Facebook, Code2, Rocket, Zap } from 'lucide-react';
+import { Github, Linkedin, MessageCircle, Menu, X, ExternalLink, Mail, ChevronRight, Instagram, Twitter, Facebook, Code2, Rocket, Zap, Moon, Sun } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
 
@@ -7,6 +7,10 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    return saved ? JSON.parse(saved) : false;
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,8 +71,21 @@ function App() {
     i18n.changeLanguage(lng);
   }
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    localStorage.setItem('darkMode', JSON.stringify(!darkMode));
+  }
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       {/* Header/Navigation */}
       <header className={`text-white fixed w-full z-50 transition-all duration-500 ${
         scrolled ? 'bg-slate-900/95 backdrop-blur-lg shadow-xl' : 'bg-transparent'
@@ -115,6 +132,13 @@ function App() {
                 <option value="pt">Português</option>
                 <option value="ru">Русский</option>
               </select>
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-lg hover:bg-blue-500/20 transition-all duration-300"
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
             </div>
           </div>
 
@@ -125,10 +149,12 @@ function App() {
               <a href="#skills" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('technicalSkills01')}</a>
               <a href="#projects" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('projects')}</a>
               <a href="#contact" className="hover:text-blue-400 transition-colors" onClick={toggleMenu}>{t('contact')}</a>
-              {/* <select onChange={(e) => changeLanguage(e.target.value)} className="style">
-                <option selected value="en">English</option>
-                <option value="pt">Português</option>
-              </select> */}
+              <button
+                onClick={toggleDarkMode}
+                className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+              >
+                {darkMode ? <><Sun size={20} /> Light Mode</> : <><Moon size={20} /> Dark Mode</>}
+              </button>
             </div>
           </div>
         </nav>
@@ -193,7 +219,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 relative">
+      <section id="about" className="py-32 relative dark:bg-slate-900/50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="w-full md:w-1/3 group">
@@ -202,26 +228,26 @@ function App() {
                 <img
                   src="https://avatars.githubusercontent.com/u/43576446?v=4"
                   alt="Mariano JavaSwing"
-                  className="relative rounded-2xl shadow-2xl w-full transform group-hover:scale-105 transition-transform duration-500 border-4 border-white/10"
+                  className="relative rounded-2xl shadow-2xl w-full transform group-hover:scale-105 transition-transform duration-500 border-4 border-white/10 dark:border-slate-700"
                 />
               </div>
             </div>
             <div className="w-full md:w-2/3">
-              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-6">
                 {t('aboutMe')}
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-600 dark:from-slate-100 dark:to-slate-400 bg-clip-text text-transparent">
                 {t('creatingSolutionsTitle')}
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                 {t('aboutMeContent')}
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
-                <div className="flex items-center gap-2 text-slate-700">
+                <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                   <span className="font-medium">{t('yearsExperience')}</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-700">
+                <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
                   <span className="font-medium">{t('projectsDelivered')}</span>
                 </div>
@@ -232,14 +258,14 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-32 bg-white relative overflow-hidden">
+      <section id="skills" className="py-32 bg-white dark:bg-slate-800 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600"></div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4">
               {t('technicalSkills02')}
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 to-slate-600 dark:from-slate-100 dark:to-slate-400 bg-clip-text text-transparent">
               {t('technologiesAndTools')}
             </h2>
           </div>
@@ -251,11 +277,11 @@ function App() {
             ].map((skill, index) => (
               <div
                 key={skill}
-                className="group relative bg-gradient-to-br from-white to-slate-50 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-blue-300 hover:-translate-y-2"
+                className="group relative bg-gradient-to-br from-white to-slate-50 dark:from-slate-700 dark:to-slate-600 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500 hover:-translate-y-2"
                 style={{animationDelay: `${index * 0.1}s`}}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-cyan-600/0 group-hover:from-blue-600/5 group-hover:to-cyan-600/5 rounded-2xl transition-all duration-500"></div>
-                <h3 className="relative text-base font-bold text-slate-800 group-hover:text-blue-600 transition-colors">{skill}</h3>
+                <h3 className="relative text-base font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{skill}</h3>
               </div>
             ))}
           </div>
@@ -263,22 +289,22 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-32 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="projects" className="py-32 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4">
               {t('portfolio')}
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-600 dark:from-slate-100 dark:to-slate-400 bg-clip-text text-transparent">
               {t('highlightKeyProjects')}
             </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto">
               {t('projectsDescription')}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project 1 */}
-            <div className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-blue-300 hover:-translate-y-2">
+            <div className="group bg-white dark:bg-slate-700 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500 hover:-translate-y-2">
               <div className="h-56 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -286,10 +312,10 @@ function App() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {t('PublicTransportTicketSalesAndPurchaseSystem')}
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                   {t('PublicTransportTicketSalesAndPurchaseSystemDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -312,7 +338,7 @@ function App() {
             </div>
 
             {/* Project 2 */}
-            <div className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-emerald-300 hover:-translate-y-2">
+            <div className="group bg-white dark:bg-slate-700 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-600 hover:border-emerald-300 dark:hover:border-emerald-500 hover:-translate-y-2">
               <div className="h-56 bg-gradient-to-br from-emerald-500 via-green-600 to-teal-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -320,8 +346,8 @@ function App() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-emerald-600 transition-colors">{t('digitalWallet')}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{t('digitalWallet')}</h3>
+                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                   {t('digitalWalletDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -343,7 +369,7 @@ function App() {
             </div>
 
             {/* Project 3 */}
-            <div className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-orange-300 hover:-translate-y-2">
+            <div className="group bg-white dark:bg-slate-700 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-600 hover:border-orange-300 dark:hover:border-orange-500 hover:-translate-y-2">
               <div className="h-56 bg-gradient-to-br from-orange-500 via-amber-600 to-yellow-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -351,10 +377,10 @@ function App() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-orange-600 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
                   {t('microservicesPlatform')}
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                   {t('microservicesPlatformDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -379,7 +405,7 @@ function App() {
             </div>
 
             {/* Project 4 */}
-            <div className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-teal-300 hover:-translate-y-2">
+            <div className="group bg-white dark:bg-slate-700 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-600 hover:border-teal-300 dark:hover:border-teal-500 hover:-translate-y-2">
               <div className="h-56 bg-gradient-to-br from-teal-500 via-cyan-600 to-blue-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -387,10 +413,10 @@ function App() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-teal-600 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   {t('energyPlatform')}
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                   {t('energyPlatformDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -419,7 +445,7 @@ function App() {
             </div>
 
             {/* Project 5 - SGDEA */}
-            <div className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-violet-300 hover:-translate-y-2">
+            <div className="group bg-white dark:bg-slate-700 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-600 hover:border-violet-300 dark:hover:border-violet-500 hover:-translate-y-2">
               <div className="h-56 bg-gradient-to-br from-violet-500 via-purple-600 to-fuchsia-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -427,10 +453,10 @@ function App() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-violet-600 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                   {t('sgdeaTitle')}
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                   {t('sgdeaDescription')}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
