@@ -376,7 +376,8 @@ function App() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href="https://async-app.com/"
+                  target='_blank'
                   className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold group/link"
                 >
                   {t('viewDetails')}
